@@ -33,9 +33,13 @@
 	</div>
 
 	<!-- main will display results -->
-	<main role='main' class='results col-8' aria-live='assertive' hidden>
+	<main role='main' class='results col-8' aria-live='assertive' hidden >
 		<h2>Here's what we found near you: </h2>
 	</main>
+
+	<!-- displays map -->
+	<div id='map' hidden>
+    </div>
 
 	<!-- results to be shown when a market is selected in th map -->
 	<div class='result-details col-4' hidden>
@@ -45,6 +49,8 @@
 	</div>
 
 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNvAJPLqHljfUkJbhsriz5TxgNuwvp64g&callback=initMap"
+    async defer></script>
 
 	<script src="index.js"></script>
 </body>
