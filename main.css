@@ -1,0 +1,45 @@
+* {
+	box-sizing: border-box;
+}
+
+.container{
+	border: 1px black solid;
+	background: lightgray;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+
+.heading{
+	border: 1px gray solid;	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.search-form{
+	border: 1px gray solid;	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.search-form, .heading, .results, .result-details{
+	padding: 20px;
+}
+
+.results{
+	border: 1px black solid;
+	background: lightgray;
+	margin-top: 20px;
+	position: relative;
+}
+
+.result-details{
+	margin-top: 20px;
+	border: 1px black solid;
+	background: lightgray;
+	position: relative;
+}
+
+.results, .result-details{
+	margin: 20px;
+}
