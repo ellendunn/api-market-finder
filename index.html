@@ -26,27 +26,28 @@
 		<!-- should action go to google maps? -->
 		<form action='#' name='search-form' class='search-form col-6'>
 			<legend></legend>
-			<label for='zip-search' aria-label='zipcode'>Enter Your ZIP Code: </label>
-			<input type='text' id='zip-search' pattern='[0-9]{5}' title='Five digit zip code' required />
+			<label for='zip-search' aria-label='zipcode'>
+				Enter Your ZIP Code: 
+			</label>
+			<input type='text' id='zip-search' pattern='[0-9]{5}' 
+			title='Five digit zip code' required />
 			<button type='submit'>Search</button>
 		</form>
 	</div>
 
 	<!-- main will display results -->
-	<main role='main' class='results col-8' aria-live='assertive' hidden >
+	<main role='main' class='results col-4' aria-live='passive' hidden >
 		<h2>Here's what we found near you: </h2>
+		  <!-- results to be shown when a market is selected in the map -->
+		<div class='result-details'>	
+		</div>
 	</main>
 
+
 	<!-- displays map -->
-	<div id='map' hidden>
+	<div id='map' class='col 8' hidden>
     </div>
 
-	<!-- results to be shown when a market is selected in th map -->
-	<div class='result-details col-4' hidden>
-		<h3>Title of Farmers' Market Selected</h3>
-		<p>When can you go?</p>
-		<p>What can you purchase?</p>
-	</div>
 
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNvAJPLqHljfUkJbhsriz5TxgNuwvp64g&callback=initMap"

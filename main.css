@@ -22,31 +22,41 @@
 	margin-right: auto;
 }
 
-.search-form, .heading, .results, .result-details{
+.search-form, .heading, .results{
 	padding: 20px;
 }
 
 .results{
 	border: 1px black solid;
 	background: lightgray;
-	margin-top: 20px;
-	position: relative;
+/*	margin-top: 20px;
+*/	position: relative;
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+	display: inline-block;
 }
 
 .result-details{
-	margin-top: 20px;
-	border: 1px black solid;
+/*	margin-top: 20px;
+*/	border: 1px black solid;
 	background: lightgray;
 	position: relative;
-}
-
-.results, .result-details{
-	margin: 20px;
+	float: left;
 }
 
 #map {
     height: 400px;
     margin: 20px;
+  }
+
+/*repsonsive styling*/
+  .col-4 {
+  	width: 33%;
+  }
+
+  .col-8{
+  	width: 75%;
   }
 
 
