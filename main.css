@@ -1,12 +1,14 @@
-* {
+* body{
 	box-sizing: border-box;
-}
+/*	background-color: green;
+*/}
 
 .container{
 	border: 1px black solid;
-	background: lightgray;
+	background: lightgreen;
 	margin-bottom: 20px;
 	width: 100%;
+	text-align: center
 }
 
 
@@ -28,25 +30,26 @@
 
 .results{
 	border: 1px black solid;
-	background: lightgray;
+	background: lightgreen;
 /*	margin-top: 20px;
 */	position: relative;
 	float: left;
 	margin-left: 20px;
 	margin-right: 20px;
 	display: inline-block;
+	height: 600px;
 }
 
 .result-details{
 /*	margin-top: 20px;
-*/	border: 1px black solid;
-	background: lightgray;
+	border: 1px black solid; */
+	background: lightgreen;
 	position: relative;
-	float: left;
+	float: left
 }
 
 #map {
-    height: 400px;
+    height: 600px;
     margin: 20px;
   }
 
