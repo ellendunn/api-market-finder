@@ -16,23 +16,25 @@ function showMarker(market, bounds){
 	// put markers on the map
 	// extend bounds based on markers	
 	// split GoogleAddress string to get coordinates for each marker
+	// console.log(market);
 	const [lat, lng] = market.marketdetails.GoogleLink
 										.split('?q=')[1].split('%20(')[0].split('%2C%20')
 										.map(Number);
 	const position = new google.maps.LatLng(lat, lng);
 	const marketMarker = new google.maps.Marker({position, map});
 	bounds.extend(position);
-	const marketSchedule = market.marketdetails.Schedule;
-	const marketProducts = market.marketdetails.Products;
-	console.log(marketSchedule, marketProducts);
-	// showMarketDetails(marketName, marketSchedule, marketProducts);
-	handleMarketSelect(marketMarker, market.name, marketSchedule, marketProducts);
+
+	const products = market.marketdetails.Products;
+	const schedule = market.marketdetails.Schedule;
+	// console.log(marketSchedule);
+	handleMarketSelect(marketMarker, market.name, products, schedule);
+	
+	// handleMarketSelect(marketMarker, market.name, marketSchedule, marketProducts);
 	// handleSearchResults(market.name);
 
 }
 
 function fitMap(markets) {
-	console.log(markets);
 	//declare bounds variable LatLngBounds()
 	const bounds = new google.maps.LatLngBounds();
 	//data loop to get coordinates
@@ -51,7 +53,6 @@ function gatherResultsFromApi(query, endpoint) { //removed callback
 			.then(markets => fitMap(markets))
 		// 		const marketSchedule = _data.marketdetails.Schedule;
 		// 		const marketProducts = _data.marketdetails.Products;
-		// 		showMarketDetails(marketName, marketSchedule, marketProducts);
 		// 		handleMarketSelect(marketMarker, marketName, marketSchedule, marketProducts);
 		resultsLoad(numFound);
 		loadMap()
@@ -66,14 +67,16 @@ function loadMap(){
 
 function resultsLoad(num){
 	// this will interpret results from API to then put in showResultsOnMap
+	$('.numResults').empty();
+
 	const resultsElem = $('.results');
 	resultsElem
  		.prop('hidden', false)
-		.children('h2').append(`We found ${num} farmers' markets in your neighborhood!`)}
+		.children('h2').append(`There are ${num} Farmers' Markets in Your Neighborhood!`)}
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 41.968131, lng:-87.684336}, 
+    // center: {lat: 41.968131, lng:-87.684336}, 
     zoom: 15
     });
 }
@@ -82,6 +85,8 @@ function handleSubmitButton(){
 	// this function will handle the input in the form after the 
 	// submit button is pressed and will gatherResults()
 	$('.search-form').submit(event =>{
+		$('.result-details').html(`<p>Click on a market in the map to see more details!</p>`);
+
 		event.preventDefault();
 		const queryTarget = $(event.currentTarget).find('#zip-search');
 		const zip = queryTarget.val();
@@ -91,44 +96,56 @@ function handleSubmitButton(){
 	)
 }
 
-// after map loads, this handles how the user interacts with the map and results
-function showMarketDetails(name, schedule, products){
-	// this function will show the title of the market, the schedule, and the 
-	// products sold in a side bar when a userselects a market from the map
-	const resultDetailsElem = $('.result-details');
+function showMarketDetails(name, products, schedule) {
+	$('.result-details').empty();
+	  const editName = name.replace(/\d+/g,'');
+	  const editedName=editName.replace('. ', '')
 
- 	resultDetailsElem
- 	 	.prop('hidden', false)
-}
+    $('.result-details').append(`<h3 class='market-title'>${editedName}</h3>
+    	<p class='market-schedule'>When can you go?</p>
+    	<p class='market-products'>What can you purchase?</p>`)
 
-function handleMarketSelect(marker, name, schedule, products){
-	// this function will handle the event of the user selecting 
-	// a market from the map and will renderResultDetails()
-  var infowindow = new google.maps.InfoWindow({
-    content: name
-  });
-
-  marker.addListener('click', function() {
-    infowindow.open(marker.get('map'), marker);
-    $('.result-details').empty();
-    $('.result-details').append(`<h3 class='market-title'>${name}</h3>
-    	<p class='market-products'>What can you purchase?</p>
-    	<p class='market-schedule'>When can you go?</p>`)
-
-   	if (schedule = " <br> <br> <br> "){
+   	if (schedule === " <br> <br> <br> "){
     	$('.market-schedule').append(`<br><span class='info'> Schedule not found.</span>`)
     }else{
-    	$('.market-schedule').append(`<span class='info'>${schedule}</span>`)
+    	const edited = schedule.replace(';<br>','');
+    	$('.market-schedule').append(`<br><span class='info'>${edited}</span>`)
     }
 
-    if (products = " "){
-    	$('.market-products').append(`<br><span class='info'>Products not found.</span>`)
-    }else{
-    	$('.market-products').append(`<span class='info'>${products}</span>`)
-    }
-
-  });
-
+		if (products === "") {
+	    $('.market-products').append(`<br><span class='info'>Products not found.</span>`)
+	  }else{
+	    $('.market-products').append(`<br><span class='info'>${products}</span>`)
+	  }
 }
+
+
+
+function handleMarketSelect(marker, name, products, schedule){
+	// this function will handle the event of the user selecting 
+	// a market from the map and will renderResultDetails()
+	const markers = [];
+	markers.push(marker);
+
+	const editName = name.replace(/\d+/g,'');
+	const editedName=editName.replace('. ', '')
+
+	marker.infowindow = new google.maps.InfoWindow({
+    content: editedName
+  	});
+
+  google.maps.event.addListener(marker, 'click', function() {
+  	marker.infowindow.close();
+
+		this.infowindow.open(marker.get('map'), this);
+
+  	showMarketDetails(name, products, schedule);
+    
+
+})
+
+
+
+};
 
 handleSubmitButton();

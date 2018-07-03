@@ -6,64 +6,144 @@
 .container{
 	border: 1px black solid;
 	background: lightgreen;
-	margin-bottom: 20px;
 	width: 100%;
 	text-align: center
 }
 
-
 .heading{
-	border: 1px gray solid;	
-	margin-left: auto;
+/*	border: 1px gray solid;	
+*/	margin-left: auto;
 	margin-right: auto;
 }
 
 .search-form{
-	border: 1px gray solid;	
-	margin-left: auto;
+/*	border: 1px gray solid;	
+*/	margin-left: auto;
 	margin-right: auto;
 }
 
-.search-form, .heading, .results{
-	padding: 20px;
+.search-form {
+	padding-bottom: 10px;
 }
 
 .results{
-	border: 1px black solid;
-	background: lightgreen;
-/*	margin-top: 20px;
-*/	position: relative;
-	float: left;
-	margin-left: 20px;
-	margin-right: 20px;
-	display: inline-block;
-	height: 600px;
+/*	border: 1px black solid;
+*/	background: lightgreen;
+	padding-left: 20px;
+	padding-right: 0px;
+	height: 740px;
 }
 
+.numResults {
+	border: 1px black solid;
+	text-align: center;
+	margin-bottom:0px;
+	}
+
 .result-details{
+	padding-left: 10px;
+	padding-right: 10px;
 /*	margin-top: 20px;
-	border: 1px black solid; */
+*/	margin-bottom: 20px;
+	text-align: center;
+	border: 1px gray solid; 
 	background: lightgreen;
-	position: relative;
-	float: left
+	font-style: bolder;
+}
+
+.market-schedule, .market-products {
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+p.market-schedule, p.market-products { /*not working, wrong selector? */
+	font-size: 18px;
+}
+
+.info {
+	font-size: 12px
 }
 
 #map {
-    height: 600px;
-    margin: 20px;
+    height: 740px;
   }
+
+
+/* Clearfix */
+heading::before,
+heading::after {
+    display: table;
+    content: '';
+}
+heading::after {
+    clear: both;
+}
+
+.col-4, .col-8{
+	float: left;
+    padding-left: 1.04166666%;
+    padding-right: 1.04166666%;
+}
 
 /*repsonsive styling*/
   .col-4 {
-  	width: 33%;
+  	width: 32%;
   }
 
-  .col-8{
-  	width: 75%;
+  .col-8 {
+  	width: 63%;
+  }
+
+  .col-12{
+  	width: 100%;
   }
 
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 768px) {
+/* Styles */
+	.col-4, .col-8, .col-12{
+		width:100%;
+	}
+	.results{
+  		max-height: 700px;
+  	}
+
+}
 
 
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and 
+(max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+	.col-4 {
+		width:32%;
+	}
+
+	.col-8 {
+  		width: 63%;
+  	}
+
+  	.col-12{
+  		width: 100%;
+  	}
+
+  	.results{
+  		height: 740px;
+  	}
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and 
+(max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+	.col-4, .col-8, .col-12{
+		width:100%;
+	}
+	.results{
+  		max-height: 700px;
+  	}
+}
 
 
