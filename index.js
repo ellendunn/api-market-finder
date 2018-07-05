@@ -43,6 +43,7 @@ function gatherResultsFromApi(query, endpoint) {
 	// on the map
 	$.getJSON(endpoint + query, data => { 
 		$('.spinner').prop('hidden', false);
+		$('.main').prop('hidden', true)
 
 		//handles error for false zip codes
 		const firstResult = data.results[0];
@@ -53,9 +54,10 @@ function gatherResultsFromApi(query, endpoint) {
 		const promises = data.results.map(getMarketData);
 		Promise.all(promises)
 			.then(markets => {
-				fitMap(markets);
 				$('.main').prop('hidden', false);
 				$('.spinner').prop('hidden', true);
+				fitMap(markets);
+
 			});
 		resultsLoad(query);
 	})
@@ -68,7 +70,9 @@ function resultsLoad(zip){
 }
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {});
+  map = new google.maps.Map(document.getElementById('map'), {
+  	zoom: 15
+  });
   infowindow = new google.maps.InfoWindow();
 }
 
