@@ -1,53 +1,66 @@
 * body{
 	box-sizing: border-box;
 /*	background-color: green;
-*/}
+*/
+	font-family: 'Raleway', sans-serif;
+	background: linear-gradient(
+    rgba(0, 0, 0, .4),
+    rgba(0, 0, 0, .4)
+    ), 
+		url('https://seela.org/wp-content/uploads/2016/08/Best-of-Hollywood_11.jpg'), 
+		fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		align-content: center;
+		color: white;
+}
 
 .container{
-	border: 1px black solid;
-	background: lightgreen;
+	border: 1px green solid;
+	background: green;
 	width: 100%;
-	text-align: center
+	text-align: center;
+	font-style: black;
+	margin-top:0px;
+	padding-top:;
 }
 
 .heading{
-/*	border: 1px gray solid;	
-*/	margin-left: auto;
+	margin-left: auto;
 	margin-right: auto;
 }
 
 .search-form{
-/*	border: 1px gray solid;	
-*/	margin-left: auto;
+	margin-left: auto;
 	margin-right: auto;
+	padding-bottom: 10px
 }
 
-.search-form {
-	padding-bottom: 10px;
+button{
+	background: white;
+	margin: 10px;
 }
+
 
 .results{
-/*	border: 1px black solid;
-*/	background: lightgreen;
 	padding-left: 20px;
 	padding-right: 0px;
-	height: 740px;
+	height: auto;
 }
 
 .numResults {
-	border: 1px black solid;
-	text-align: center;
+/*	border: 1px black solid;
+*/	text-align: center;
 	margin-bottom:0px;
 	}
 
 .result-details{
 	padding-left: 10px;
 	padding-right: 10px;
-/*	margin-top: 20px;
-*/	margin-bottom: 20px;
+	margin-bottom: 20px;
 	text-align: center;
-	border: 1px gray solid; 
-	background: lightgreen;
 	font-style: bolder;
 }
 
@@ -65,8 +78,10 @@ p.market-schedule, p.market-products { /*not working, wrong selector? */
 }
 
 #map {
-    height: 740px;
-  }
+  height: 600px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
 
 
 /* Clearfix */
@@ -81,8 +96,8 @@ heading::after {
 
 .col-4, .col-8{
 	float: left;
-    padding-left: 1.04166666%;
-    padding-right: 1.04166666%;
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
 }
 
 /*repsonsive styling*/
@@ -105,10 +120,6 @@ heading::after {
 	.col-4, .col-8, .col-12{
 		width:100%;
 	}
-	.results{
-  		max-height: 700px;
-  	}
-
 }
 
 
@@ -122,16 +133,12 @@ heading::after {
 	}
 
 	.col-8 {
-  		width: 63%;
-  	}
+		width: 63%;
+	}
 
-  	.col-12{
-  		width: 100%;
-  	}
-
-  	.results{
-  		height: 740px;
-  	}
+  .col-12{
+		width: 100%;
+	}
 }
 
 /* iPads (portrait) ----------- */
@@ -141,9 +148,7 @@ heading::after {
 	.col-4, .col-8, .col-12{
 		width:100%;
 	}
-	.results{
-  		max-height: 700px;
-  	}
+
 }
 
 

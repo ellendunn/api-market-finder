@@ -1,11 +1,9 @@
 TO DO's
 
-clear map marker title when clicking on the next
 
-X add responsive layout formatting (results should stack on top of map)
 
-turn list of schedule products into bullets wherever there is a ;
 
+optional with extra time: 
 given coordinates, get city and call images API to show for that city 
 (unsplash.com)
 
