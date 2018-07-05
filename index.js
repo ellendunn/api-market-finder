@@ -1,6 +1,6 @@
 'use strict'
 
-const BASE_ENDPOINT = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/'
+const BASE_ENDPOINT = 'https://search.ams.usda.gov/farmersmarkets/v1/data.svc/'
 const ZIPCODE_ENDPOINT = BASE_ENDPOINT + 'zipSearch?zip=';
 const FM_ID_ENDPOINT = BASE_ENDPOINT + 'mktDetail?id=';
 let map, infowindow;
@@ -8,7 +8,8 @@ let map, infowindow;
 
 function getMarketData(market){
 	return $.getJSON(FM_ID_ENDPOINT + market.id)
-		.then(data => Object.assign(market, data))
+		.then(data => Object.assign(market, data)) 
+		//combining object for market (id and marketname) with data (marketdetails)
 }
 
 function showMarker(market, bounds){
@@ -25,7 +26,6 @@ function showMarker(market, bounds){
 	const products = market.marketdetails.Products;
 	const schedule = market.marketdetails.Schedule;
 	handleMarketSelect(marketMarker, market.marketname, products, schedule);
-
 }
 
 function fitMap(markets) {
