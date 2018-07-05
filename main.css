@@ -1,7 +1,5 @@
 * body{
 	box-sizing: border-box;
-/*	background-color: green;
-*/
 	font-family: 'Raleway', sans-serif;
 	background: linear-gradient(
     rgba(0, 0, 0, .4),
@@ -35,7 +33,7 @@
 .search-form{
 	margin-left: auto;
 	margin-right: auto;
-	padding-bottom: 10px
+	padding-bottom: 20px
 }
 
 button{
@@ -43,21 +41,35 @@ button{
 	margin: 10px;
 }
 
-.results{
-	padding-left: 20px;
-	padding-right: 0px;
-	height: auto;
+.spinner{
+	position: relative;
+	padding: 0px;
+	text-align: center;
+	width: 100%;
+
 }
 
-.numResults {
-/*	border: 1px black solid;
-*/	text-align: center;
+.spinnergif {
+	margin-left: auto;
+	margin-right: auto;
+	height: 80px;
+	margin-top: 40px;
+}
+
+.results{
+	padding-left: 10px;
+	padding-right: 0px;
+	height: auto;
+	background-color: rgba(0,0,0,0.5);
+
+}
+
+.results-title {
+	text-align: center;
 	margin-bottom:0px;
 	}
 
 .result-details{
-	padding-left: 10px;
-	padding-right: 10px;
 	margin-bottom: 20px;
 	text-align: center;
 	font-style: bolder;
@@ -68,7 +80,7 @@ button{
 	margin-top: 0px;
 }
 
-p.market-schedule, p.market-products { /*not working, wrong selector? */
+p.market-schedule, p.market-products {  
 	font-size: 18px;
 }
 
@@ -93,7 +105,7 @@ heading::after {
     clear: both;
 }
 
-.col-4, .col-8{
+.col-4, .col-8, .col-12{
 	float: left;
   padding-left: 1.04166666%;
   padding-right: 1.04166666%;

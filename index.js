@@ -42,33 +42,33 @@ function gatherResultsFromApi(query, endpoint) {
 	// from the user and renderResults() 
 	// on the map
 	$.getJSON(endpoint + query, data => { 
+		$('.spinner').prop('hidden', false);
+
+		//handles error for false zip codes
 		const firstResult = data.results[0];
 		if (firstResult.id === 'Error'){
-			return alert(firstResult.marketname)
+			$('.spinner').prop('hidden', true);
+			return alert(firstResult.marketname);
 		}
 		const promises = data.results.map(getMarketData);
-		const numFound = data.results.length;
 		Promise.all(promises)
-			.then(markets => fitMap(markets));
-		resultsLoad(numFound);
-		$('#map').prop('hidden', false);
+			.then(markets => {
+				fitMap(markets);
+				$('.main').prop('hidden', false);
+				$('.spinner').prop('hidden', true);
+			});
+		resultsLoad(query);
 	})
 }
 
-function resultsLoad(num){
+function resultsLoad(zip){
 	// this will interpret results from API to then put in showResultsOnMap
-	$('.numResults').empty();
-
-	$('.results')
- 		.prop('hidden', false)
-		.children('h2')
-		.append(`There are ${num} Farmers' Markets in Your Neighborhood!`)
+	$('.results-title')
+		.html(`<h2>Here's What We Found Near ${zip}`)
 }
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-	  zoom: 15
-  });
+  map = new google.maps.Map(document.getElementById('map'), {});
   infowindow = new google.maps.InfoWindow();
 }
 
@@ -92,10 +92,11 @@ function editName(name){
 }
 
 function showMarketDetails(name, products, schedule) {
+	$('.numResults').empty();
 	$('.result-details').empty();
 	  const editedName = editName(name);
 
-    $('.result-details').append(`<h3 class='market-title'>${editedName}</h3>
+    $('.result-details').append(`<h2 class='market-title'>${editedName}</h3>
     	<p class='market-schedule'>When can you go?</p>
     	<p class='market-products'>What can you purchase?</p>`)
 

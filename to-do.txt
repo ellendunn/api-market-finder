@@ -1,10 +1,10 @@
 TO DO's
 
-
-
-
 optional with extra time: 
 given coordinates, get city and call images API to show for that city 
 (unsplash.com)
 
+
+USER FEEDBACK: 
+years provided in schedule are out of date
 
