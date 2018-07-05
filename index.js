@@ -103,7 +103,7 @@ function showMarketDetails(name, products, schedule) {
     	$('.market-schedule')
     		.append(`<br><span class='info'> Schedule not found.</span>`)
     }else{
-    	const edited = schedule.replace(/<br>/g,'');
+    	const edited = schedule.replace(/<br>/g,'').replace(';', '');
     	$('.market-schedule').append(`<br><span class='info'>${edited}</span>`)
     }
 

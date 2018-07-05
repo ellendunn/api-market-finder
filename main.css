@@ -43,7 +43,6 @@ button{
 	margin: 10px;
 }
 
-
 .results{
 	padding-left: 20px;
 	padding-right: 0px;
@@ -74,7 +73,7 @@ p.market-schedule, p.market-products { /*not working, wrong selector? */
 }
 
 .info {
-	font-size: 12px
+	font-size: 14px
 }
 
 #map {
