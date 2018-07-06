@@ -17,7 +17,7 @@
 
 .container{
 	border: 1px green solid;
-	background: rgba(49, 162, 49, 0.85);
+	background: rgba(49, 162, 49, 0.9);
 	width: 100%;
 	text-align: center;
 	margin-top:0px;
@@ -67,8 +67,25 @@
 .results{
 	padding-left: 10px;
 	padding-right: 0px;
+	margin: 5px;
 	height: auto;
-	background-color: rgba(0,0,0,0.35);
+	background-color: rgba(0,0,0,0.3);
+	    -webkit-transition-property: background;
+       -moz-transition-property: background;
+         -o-transition-property: background;
+            transition-property: background;
+    -webkit-transition-duration: 0.4s;
+       -moz-transition-duration: 0.4s;
+         -o-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+    -webkit-transition-timing-function: linear;
+       -moz-transition-timing-function: linear;
+         -o-transition-timing-function: linear;
+            transition-timing-function: linear;
+}
+
+.results:hover {
+	background: rgba(0, 10, 0, 0.6);
 }
 
 .results-title {
@@ -139,7 +156,7 @@ a:hover{
 
 /*repsonsive styling*/
   .col-4 {
-  	width: 32%;
+  	width: 31%;
   }
 
   .col-8 {
@@ -165,7 +182,7 @@ a:hover{
 (max-device-width : 1024px) and (orientation : landscape) {
 /* Styles */
 	.col-4 {
-		width:32%;
+		width:31%;
 	}
 
 	.col-8 {
