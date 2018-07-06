@@ -16,6 +16,7 @@ about the market on the left hand side of the page. These details include a sche
 the market is open throughout the year, what products are regularly sold at the market, and
 a link to get directions to the market from a location (to be input by the user) on Google
 Maps. 
+See attached screenshots for further usage.
 
 Technology used: 
 HTML, CSS, JavaScript, jQuery, Ajax requests, 
