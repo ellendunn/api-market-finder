@@ -49,14 +49,14 @@
 	</div>
 
 	<!-- main will display results -->
-	<main role='main' class='main col-12 item' aria-live='passive' hidden >
-		<section class='results col-4'>
+	<main role='main' class='main col-12 item' aria-level='2' hidden >
+		<section class='results col-4' aria-live='passive'>
 			<h2 class='results-title'></h2>		
  			<!-- results to be shown when a market is selected in the map -->
 			<div class='result-details'></div>
 		</section>
 		<!-- displays map -->
-		<div id='map' class='map col-8'></div>
+		<div id='map' class='map col-8' aria-live='passive'></div>
 	</main>
 
 	<script src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyCNvAJPLqHljfUkJbhsriz5TxgNuwvp64g&callback=initMap" async defer>

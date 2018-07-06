@@ -17,7 +17,7 @@
 
 .container{
 	border: 1px green solid;
-	background: rgba(49, 175, 49, 0.87);
+	background: rgba(49, 175, 49, 0.9);
 	width: 100%;
 	text-align: center;
 	margin-top:0px;
@@ -69,7 +69,7 @@
 	padding-right: 0px;
 	margin: 5px;
 	height: auto;
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(0,0,0,0.45);
 	-webkit-transition-property: background;
 	-moz-transition-property: background;
 	-o-transition-property: background;
