@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang ='en'>
+<html lang='en'>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
 <body>
 	<div class='container col-12 item'>
 	<!-- display main heading - will be fixed on page -->
-		<header role='heading' class='heading'>
+		<header role='heading' class='heading' aria-level='1'>
 			<h1>Find Your Neighborhood Farmers' Market</h1>
 		</header>
 
@@ -42,12 +42,12 @@
 
 	<!-- displays spinner during ajax request -->
 	<div class='spinner' hidden >
-		<img class='spinnergif' src = 'https://www.beforeyou.com/wp-content/themes/before-you/dist/images/ajax-spinner.gif' alt='loading gif' />
+		<img class='spinnergif' src='https://www.beforeyou.com/wp-content/themes/before-you/dist/images/ajax-spinner.gif' alt='loading gif' />
 	</div>
 
 	<!-- main will display results -->
-	<main role='main' class='main col-12 item' hidden >
-		<section class='results col-4' aria-live='passive' >
+	<main role='main' class='main col-12 item' aria-live='passive' hidden >
+		<section class='results col-4'>
 			<h2 class='results-title'></h2>		
  			<!-- results to be shown when a market is selected in the map -->
 			<div class='result-details'></div>

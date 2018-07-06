@@ -17,7 +17,7 @@
 
 .container{
 	border: 1px green solid;
-	background: rgb(49, 162, 49);
+	background: rgba(49, 162, 49, 0.9);
 	width: 100%;
 	text-align: center;
 	margin-top:0px;
@@ -68,7 +68,7 @@
 	padding-left: 10px;
 	padding-right: 0px;
 	height: auto;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.35);
 }
 
 .results-title {
@@ -92,8 +92,13 @@ p.market-schedule, p.market-products {
 	font-size: 18px;
 }
 
+.market-directions {
+	font-size: 16px;
+	color: white;
+}
+
 .info {
-	font-size: 14px
+	font-size: 12px
 }
 
 #map {
