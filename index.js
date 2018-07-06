@@ -14,15 +14,14 @@ function getMarketData(market){
 
 function showMarker(market, bounds){
 	// put markers on the map
-	// extend bounds based on markers	
-	// split GoogleAddress string to get coordinates for each marker
 	const address = market.marketdetails.GoogleLink;
-
+	// split GoogleAddress string to get coordinates for each marker
 	const [lat, lng] = address
 										.split('?q=')[1].split('%20(')[0].split('%2C%20')
 										.map(Number);
 	const position = new google.maps.LatLng(lat, lng);
 	const marketMarker = new google.maps.Marker({position, map});
+	// extend bounds based on markers	
 	bounds.extend(position);
 
 	const products = market.marketdetails.Products;
@@ -34,7 +33,6 @@ function fitMap(markets) {
 	//declare bounds variable LatLngBounds()
 	const bounds = new google.maps.LatLngBounds();
 	//data loop to get coordinates
-
 	markets.forEach(market => showMarker(market, bounds));
 	// resposition map 
 	map.fitBounds(bounds);
@@ -42,9 +40,7 @@ function fitMap(markets) {
 
 function gatherResultsFromApi(query, endpoint) { 
 	// this function will gather the results from the API based on the input
-	// from the user and renderResults() 
-	// on the map
-
+	// from the user and renderResults() on the map
 	$.getJSON(endpoint + query, data => { 
 		$('.spinner').prop('hidden', false);
 		$('.main').prop('hidden', true)

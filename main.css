@@ -2,8 +2,8 @@
 	box-sizing: border-box;
 	font-family: 'Raleway', sans-serif;
 	background: linear-gradient(
-    rgba(0, 0, 0, .5),
-    rgba(0, 0, 0, .5)
+    rgba(0, 0, 0, .4),
+    rgba(0, 0, 0, .4)
     ), 
 		url('https://seela.org/wp-content/uploads/2016/08/Best-of-Hollywood_11.jpg'), 
 		fixed;
@@ -17,7 +17,7 @@
 
 .container{
 	border: 1px green solid;
-	background: rgba(49, 162, 49, 0.85);
+	background: rgba(49, 175, 49, 0.87);
 	width: 100%;
 	text-align: center;
 	margin-top:0px;
@@ -69,23 +69,23 @@
 	padding-right: 0px;
 	margin: 5px;
 	height: auto;
-	background-color: rgba(0,0,0,0.3);
-	    -webkit-transition-property: background;
-       -moz-transition-property: background;
-         -o-transition-property: background;
-            transition-property: background;
-    -webkit-transition-duration: 0.4s;
-       -moz-transition-duration: 0.4s;
-         -o-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-    -webkit-transition-timing-function: linear;
-       -moz-transition-timing-function: linear;
-         -o-transition-timing-function: linear;
-            transition-timing-function: linear;
+	background-color: rgba(0,0,0,0.4);
+	-webkit-transition-property: background;
+	-moz-transition-property: background;
+	-o-transition-property: background;
+	transition-property: background;
+	-webkit-transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	-webkit-transition-timing-function: linear;
+	-moz-transition-timing-function: linear;
+	-o-transition-timing-function: linear;
+	transition-timing-function: linear;
 }
 
 .results:hover {
-	background: rgba(0, 10, 0, 0.6);
+	background: rgba(0, 10, 0, 0.7);
 }
 
 .results-title {
