@@ -2,22 +2,22 @@
 	box-sizing: border-box;
 	font-family: 'Raleway', sans-serif;
 	background: linear-gradient(
-    rgba(0, 0, 0, .3),
-    rgba(0, 0, 0, .3)
+    rgba(0, 0, 0, .5),
+    rgba(0, 0, 0, .5)
     ), 
 		url('https://seela.org/wp-content/uploads/2016/08/Best-of-Hollywood_11.jpg'), 
 		fixed;
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		align-content: center;
-		color: white;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	align-content: center;
+	color: white;
 }
 
 .container{
 	border: 1px green solid;
-	background: rgba(49, 162, 49, 0.9);
+	background: rgba(49, 162, 49, 0.85);
 	width: 100%;
 	text-align: center;
 	margin-top:0px;
@@ -28,7 +28,7 @@
 	font-size: 22px;
 	padding-right: 10px;
 	padding-left: 10px;
-	font-style: bolder;
+	font-weight: bolder;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -42,7 +42,7 @@
 
 .submit-button{
 	background: white;
-	margin: 5px;
+	margin-top: 10px;
 	border-radius: 4px;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .results-title {
-	font-size: 18px;
+	font-size: 20px;
 	text-align: center;
 	margin-bottom:0px;
 	}
@@ -88,17 +88,26 @@
 	margin-top: 0px;
 }
 
-p.market-schedule, p.market-products {  
+p.result-details, p.market-schedule, p.market-products, .market-directions{  
 	font-size: 18px;
 }
 
-.market-directions {
-	font-size: 16px;
+a:link {
 	color: white;
 }
 
+a:visited{
+	color: pink;
+}
+
+a:hover{
+	color: lightgreen;
+}
+
 .info {
-	font-size: 12px
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+	font-size: 13px;
 }
 
 #map {
@@ -148,6 +157,7 @@ p.market-schedule, p.market-products {
 	.col-4, .col-8, .col-12{
 		width:100%;
 	}
+
 }
 
 /* iPads (landscape) ----------- */

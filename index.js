@@ -97,11 +97,11 @@ function showMarketDetails(name, products, schedule, address) {
 	$('.result-details').empty();
 	  const editedName = editName(name);
 
-    $('.result-details').append(`<h2 class='market-title'>${editedName}</h3>
+    $('.result-details').append(`<h3 class='market-title'>${editedName}</h3>
     	<p class='market-schedule'>When can you go?</p>
     	<p class='market-products'>What can you purchase?</p>
     	<a href='${address}' target='_blank' alt='link to Google Directions' 
-    	class='market-directions'>How do you get there?</a>`)
+    	class='market-directions' >How can you get there?</a>`)
 
    	if (schedule === " <br> <br> <br> "){
     	$('.market-schedule')
