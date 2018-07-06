@@ -16,6 +16,7 @@ function showMarker(market, bounds){
 	// put markers on the map
 	// extend bounds based on markers	
 	// split GoogleAddress string to get coordinates for each marker
+
 	const [lat, lng] = market.marketdetails.GoogleLink
 										.split('?q=')[1].split('%20(')[0].split('%2C%20')
 										.map(Number);
@@ -41,6 +42,7 @@ function gatherResultsFromApi(query, endpoint) {
 	// this function will gather the results from the API based on the input
 	// from the user and renderResults() 
 	// on the map
+
 	$.getJSON(endpoint + query, data => { 
 		$('.spinner').prop('hidden', false);
 		$('.main').prop('hidden', true)
@@ -49,7 +51,7 @@ function gatherResultsFromApi(query, endpoint) {
 		const firstResult = data.results[0];
 		if (firstResult.id === 'Error'){
 			$('.spinner').prop('hidden', true);
-			return alert(firstResult.marketname);
+			return swal(firstResult.marketname, "Try again!");
 		}
 		const promises = data.results.map(getMarketData);
 		Promise.all(promises)
@@ -66,14 +68,7 @@ function gatherResultsFromApi(query, endpoint) {
 function resultsLoad(zip){
 	// this will interpret results from API to then put in showResultsOnMap
 	$('.results-title')
-		.html(`<h2>Here's What We Found Near ${zip}`)
-}
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-  	zoom: 15
-  });
-  infowindow = new google.maps.InfoWindow();
+		.html(`<h2>Here Is What We Found Near ${zip}`)
 }
 
 function handleSubmitButton(){
@@ -108,7 +103,7 @@ function showMarketDetails(name, products, schedule) {
     	$('.market-schedule')
     		.append(`<br><span class='info'> Schedule not found.</span>`)
     }else{
-    	const edited = schedule.replace(/<br>/g,'').replace(';', '');
+    	const edited = schedule.replace(';', '').replace('<br> <br>','');
     	$('.market-schedule').append(`<br><span class='info'>${edited}</span>`)
     }
 
@@ -132,5 +127,12 @@ function handleMarketSelect(marker, name, products, schedule){
   	showMarketDetails(name, products, schedule);   
 	})
 };
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+  	zoom: 15
+  });
+  infowindow = new google.maps.InfoWindow();
+}
 
 handleSubmitButton();

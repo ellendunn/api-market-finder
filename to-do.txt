@@ -1,10 +1,19 @@
 TO DO's
 
-optional with extra time: 
-given coordinates, get city and call images API to show for that city 
-(unsplash.com)
 
 
 USER FEEDBACK: 
-years provided in schedule are out of date
+users did search in form at the top of the page right away, viewed markers 
+on the map and then clicked on markers for more info as prompted
 
+bring up map for zoom buttons to be more visible
+added customized alert and loading gif from user suggestions
+
+Additional suggestions/feedback: 
+could use additional navigational feature
+schedules for some markets are out of date due to old info in api
+
+
+optional with extra time: 
+given coordinates, get city and call images API to show for that city 
+(unsplash.com)

@@ -2,8 +2,8 @@
 	box-sizing: border-box;
 	font-family: 'Raleway', sans-serif;
 	background: linear-gradient(
-    rgba(0, 0, 0, .4),
-    rgba(0, 0, 0, .4)
+    rgba(0, 0, 0, .3),
+    rgba(0, 0, 0, .3)
     ), 
 		url('https://seela.org/wp-content/uploads/2016/08/Best-of-Hollywood_11.jpg'), 
 		fixed;
@@ -17,28 +17,37 @@
 
 .container{
 	border: 1px green solid;
-	background: green;
+	background: rgb(49, 162, 49);
 	width: 100%;
 	text-align: center;
-	font-style: black;
 	margin-top:0px;
-	padding-top:;
+	padding:10px;
 }
 
 .heading{
+	font-size: 22px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-style: bolder;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .search-form{
+	font-style: bolder;
 	margin-left: auto;
 	margin-right: auto;
-	padding-bottom: 20px
+	padding-bottom: 15px
 }
 
-button{
+.submit-button{
 	background: white;
-	margin: 10px;
+	margin: 5px;
+	border-radius: 4px;
+}
+
+#zip-search {
+	border-radius: 4px;
 }
 
 .spinner{
@@ -46,7 +55,6 @@ button{
 	padding: 0px;
 	text-align: center;
 	width: 100%;
-
 }
 
 .spinnergif {
@@ -61,10 +69,10 @@ button{
 	padding-right: 0px;
 	height: auto;
 	background-color: rgba(0,0,0,0.5);
-
 }
 
 .results-title {
+	font-size: 18px;
 	text-align: center;
 	margin-bottom:0px;
 	}
@@ -89,26 +97,30 @@ p.market-schedule, p.market-products {
 }
 
 #map {
-  height: 600px;
+  height: 500px;
   color: black;
   font-family: 'Roboto', sans-serif;
 }
 
+.swal-button{
+	background: rgb(49, 162, 49);
+}
 
-/* Clearfix */
-heading::before,
-heading::after {
-    display: table;
-    content: '';
-}
-heading::after {
-    clear: both;
-}
 
 .col-4, .col-8, .col-12{
 	float: left;
   padding-left: 1.04166666%;
   padding-right: 1.04166666%;
+}
+
+/* Clearfix */
+.item::before,
+.item::after {
+    display: table;
+    content: '';
+}
+.item::after {
+    clear: both;
 }
 
 /*repsonsive styling*/
@@ -132,7 +144,6 @@ heading::after {
 		width:100%;
 	}
 }
-
 
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width : 768px) and 
