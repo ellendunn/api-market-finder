@@ -1,4 +1,4 @@
-Market Finder - An app for people to find farmers' markets near them.
+Market Finder - An app to explore and discover local farmers' markets.
 
 Link to the app: https://ellendunn.github.io/market-finder/
 
