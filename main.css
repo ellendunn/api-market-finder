@@ -1,6 +1,10 @@
-* body{
-	box-sizing: border-box;
+* {
 	font-family: 'Raleway', sans-serif;
+	margin: 0px;
+}
+
+body {
+	box-sizing: border-box;
 	background: linear-gradient(
     rgba(0, 0, 0, .4),
     rgba(0, 0, 0, .4)
@@ -13,14 +17,19 @@
 	background-size: cover;
 	align-content: center;
 	color: white;
-}
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	}
 
-.container{
+.container {
 	border: 1px green solid;
 	background: rgba(49, 165, 49, 0.9);
 	width: 100%;
 	text-align: center;
-	margin-top:0px;
+	margin:0px;
+		margin-left: auto;
+	margin-right: auto;
 	padding:10px;
 }
 
@@ -138,7 +147,7 @@ a:hover{
 }
 
 
-.col-4, .col-8, .col-12{
+.col-4, .col-8, .col-12 {
 	float: left;
   padding-left: 1.04166666%;
   padding-right: 1.04166666%;
@@ -172,7 +181,9 @@ a:hover{
 @media only screen and (min-device-width : 320px) and (max-device-width : 768px) {
 /* Styles */
 	.col-4, .col-8, .col-12{
-		width:100%;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 }

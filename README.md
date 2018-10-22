@@ -1,8 +1,9 @@
-Market Finder - An app to explore and discover local farmers' markets.
+# Market Finder 
+#### An app to explore and discover local farmers' markets.
 
 Link to the app: https://ellendunn.github.io/market-finder/
 
-What the app does: 
+### WHAT IS MARKET FINDER
 This app provides a map directory for farmers' markets local to an entered zip code,
 as well as schedule, product, and direction details for particular market selected by the user. 
 
@@ -18,7 +19,13 @@ a link to get directions to the market from a location (to be input by the user)
 Maps. 
 See attached screenshots for further usage.
 
-Technology used: 
+### SCREENSHOTS
+![Screenshot of landing page](/screenshots/mf-enter-zip.png)
+
+![Screenshot of results and details](/screenshots/mf-results-details.png)
+
+
+### TECH USED
 HTML, CSS, JavaScript, jQuery, Ajax requests, 
 API's provided by the USDA and Google Maps
 
